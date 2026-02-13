@@ -97,18 +97,6 @@ pytest tests/ -v
 pytest tests/ --cov=src --cov-report=html
 ```
 
-### Code Quality
-```bash
-# Format code
-black src/ app.py tests/
-
-# Lint code
-flake8 src/ app.py
-
-# Type checking
-mypy src/
-```
-
 ## 🚀 Deployment
 
 ### Streamlit Cloud (Recommended)
