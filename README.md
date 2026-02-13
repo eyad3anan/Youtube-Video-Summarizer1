@@ -66,16 +66,22 @@ LOG_LEVEL=INFO
 Youtube-Video-Summarizer/
 ├── app.py                 # Main Streamlit application
 ├── src/                   # Source code
-│   ├── core/             # Core functionality
-│   │   └── rag_pipeline.py
-│   └── utils/            # Utility functions
+│   ├── __init__.py       # Makes 'src' a Python package (required!)
+│   └── core/             # Core functionality
+│       ├── __init__.py   # Makes 'core' a Python package (required!)
+│       └── rag_pipeline.py
 ├── tests/                # Test files
 │   ├── unit/            # Unit tests
 │   └── integration/     # Integration tests
 ├── requirements.txt      # Production dependencies
 ├── requirements-dev.txt  # Development dependencies
-└── .env.example         # Environment variables template
+├── .env                  # Environment variables (DO NOT commit!)
+├── .env.example         # Environment variables template
+└── .gitignore           # Git ignore file
 ```
+
+> **⚠️ Important:** The `__init__.py` files are **required** even though they're empty! They tell Python that the directories are packages, which allows the import statement `from src.core.rag_pipeline import VidGeniusAgent` to work. Without them, your app will crash with `ModuleNotFoundError`.
+
 
 ## 🧪 Testing
 
